@@ -29,6 +29,29 @@ const options = { weekday: 'long', day: 'numeric', month: 'long' };
 const frenchDate = today.toLocaleDateString('fr-FR', options);
 dateElement.textContent = frenchDate.charAt(0).toUpperCase() + frenchDate.slice(1);
 
+// Function to save the data to localStorage
+function saveData() {
+    localStorage.setItem('foodCounts', JSON.stringify(foodCounts));
+    localStorage.setItem('totals', JSON.stringify(totals));
+}
+
+// Function to load the data from localStorage
+function loadData() {
+    const savedFoodCounts = localStorage.getItem('foodCounts');
+    const savedTotals = localStorage.getItem('totals');
+
+    if (savedFoodCounts) {
+        Object.assign(foodCounts, JSON.parse(savedFoodCounts));
+    }
+
+    if (savedTotals) {
+        Object.assign(totals, JSON.parse(savedTotals));
+    }
+
+    updateSummaryUI();
+    updateTotalsUI();
+}
+
 // Update nutrition totals in UI
 function updateTotalsUI() {
     elements.calories.textContent = totals.calories.toFixed(0);
@@ -68,6 +91,9 @@ function updateSummaryUI() {
             delete foodCounts[foodName]; // Remove the food from the list
             updateSummaryUI(); // Re-render the list
             updateTotalsUI(); // Update the totals display
+
+            // Save updated data
+            saveData();
         });
 
         // Append the button to the summary list
@@ -101,6 +127,9 @@ document.querySelectorAll(".food").forEach(food => {
 
         updateTotalsUI();
         updateSummaryUI();
+
+        // Save updated data
+        saveData();
     });
 });
 
@@ -150,6 +179,5 @@ document.querySelectorAll(".food").forEach(foodEl => {
     });
 });
 
-
-
-
+// Load saved data on page load
+window.addEventListener("load", loadData);
