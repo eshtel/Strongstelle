@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calories Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .stats-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        .stats-table th, .stats-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .stats-table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calories Stats</h1>
+    <p>Below is a record of your daily calorie intake.</p>
+
+    <table class="stats-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Total Calories</th>
+            </tr>
+        </thead>
+        <tbody id="stats-list">
+            <!-- Stats will be populated here -->
+        </tbody>
+    </table>
+
+    <script src="stats.js"></script>
+</body>
+</html>
