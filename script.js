@@ -181,3 +181,4 @@ document.querySelectorAll(".food").forEach(foodEl => {
 
 // Load saved data on page load
 window.addEventListener("load", loadData);
+
