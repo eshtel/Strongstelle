@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calorie Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Total tracker at the top -->
+  <div class="totals">
+    <h2 id="date"></h2>
+    <p>Énergie (kcal): <span id="calories">0</span></p>
+    <p>Matières grasses: <span id="fat">0</span> g</p>
+    <p>Glucides: <span id="carbs">0</span> g</p>
+    <p>&nbsp;&nbsp;dont Sucres: <span id="sugar">0</span> g</p>
+    <p>Protéines: <span id="protein">0</span> g</p>
+    <div id="calorie-progress-container">
+        <div id="calorie-progress-bar"></div>
+      </div>
+      <p class="calorie-label"><span id="calorie-current">0</span></p>
+  </div>
+
+  <div id="summary">
+    <h3>Consommation d'aujourd'hui :</h3>
+    <ul id="summary-list"></ul>
+  </div>
+
+  <div class="totals">
+  <h2 id="date"></h2>
+
+  <div class="container">
+    <h1>Petit dej</h1>
+    <div class="food-grid">
+      <div class="food" data-name="Porridge + Fruit" data-calories="377" data-fat="12.4" data-carbs="56" data-sugar="26" data-protein="10.2">Porridge</div>
+      <div class="food" data-name="Tartine BC + Fruit" data-calories="294" data-fat="14.5" data-carbs="32" data-sugar="13" data-protein="9.3">Toast</div>
+      <div class="food" data-name="Avocado toast" data-calories="393" data-fat="28.5" data-carbs="30" data-sugar="3.2" data-protein="8">AvoToast</div>
+      <div class="food" data-name="Avocado egg toast" data-calories="463" data-fat="33.5" data-carbs="32" data-sugar="3.7" data-protein="14">AvoEggToast</div>
+      <div class="food" data-name="Skyr + fruit" data-calories="193" data-fat="4.7" data-carbs="21" data-sugar="16" data-protein="19">Skyr</div>
+      <div class="food" data-name="Crêpes" data-calories="552" data-fat="7.2" data-carbs="92" data-sugar="32" data-protein="13.4">Crêpes</div>
+      <div class="food" data-name="Matcha" data-calories="81" data-fat="2.8" data-carbs="13" data-sugar="10.4" data-protein="1.2">Matcha</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Plats</h1>
+    <div class="food-grid">
+      <div class="food" data-name="Curry Tofu" data-calories="524" data-fat="28" data-carbs="37" data-sugar="4.2" data-protein="30">Curry tofu</div>
+      <div class="food" data-name="Curry PoisChiche" data-calories="472" data-fat="18" data-carbs="62" data-sugar="9" data-protein="15">Curry pois chiches</div>
+      <div class="food" data-name="Pizzo" data-calories="756" data-fat="28" data-carbs="92" data-sugar="19.8" data-protein="34">Pizzo</div>
+      <div class="food" data-name="Pâtes pesto" data-calories="405" data-fat="22" data-carbs="60" data-sugar="12" data-protein="12">Pâtes</div>
+      <div class="food" data-name="Wrap" data-calories="836.5" data-fat="27.15" data-carbs="77" data-sugar="12" data-protein="73">Wrap</div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h1>Snack</h1>
+    <div class="food-grid">
+      <div class="food" data-name="Clif" data-calories="403" data-fat="10.5" data-carbs="59" data-sugar="28" data-protein="16">Clif</div>
+      <div class="food" data-name="PopCorn" data-calories="387" data-fat="23" data-carbs="64" data-sugar="6" data-protein="9">Popcorn</div>
+      <div class="food" data-name="BarreCailler" data-calories="128" data-fat="8" data-carbs="11.4" data-sugar="10.8" data-protein="2.1">Barre Cailler</div>
+      <div class="food" data-name="Blévita" data-calories="164" data-fat="5" data-carbs="24" data-sugar="1.1" data-protein="4.9">Blévita</div>
+      <div class="food" data-name="Bonbons Pêche" data-calories="665" data-fat="0" data-carbs="70" data-sugar="51" data-protein="4.4">Bonbons Pêche</div>
+      <div class="food" data-name="1 Carré Choc" data-calories="55" data-fat="3" data-carbs="7" data-sugar="3.5" data-protein="0.6">1 Carré Choc</div>
+    </div>
+  </div>
+
+
+  <script src="main.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+  }
+  
+  .totals {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #calorie-progress-container {
+    width: 100%;
+    max-width: 400px; /* Restrict maximum width */
+    height: 25px;
+    background-color: #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 10px 0;
+  }
+  
+  #calorie-progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: green;
+    transition: width 0.4s ease, background-color 0.4s ease;
+  }
+  #calorie-progress-container {
+    width: 100%;
+    max-width: 400px;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 10px 0;
+    position: relative; /* Added position relative to place the tick marker */
+  }
+  
+  #calorie-progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: green;
+    transition: width 0.4s ease, background-color 0.4s ease;
+  }
+  
+  #calorie-progress-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 80%; /* Position the tick at 2000 calories (2000/2500 = 0.8 or 80%) */
+    height: 100%;
+    width: 2px; /* Thickness of the tick */
+    background-color: #9b3a90; /* Color of the tick */
+  }
+  
+  .calorie-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #summary {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  #summary ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .food {
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .food:hover {
+    background-color: #f0f0f0;
+  }
+  
+  #summary-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.summary-btn {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.summary-btn:hover {
+  background-color: #d6d6d6;
+}
+
+  
+/* Consommation Aujourd'hui Section */
+#summary {
+    background-color: #eaeaea; /* Soft gray background */
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  #summary h3 {
+    font-size: 1.5rem;
+    color: #9b3a90; /* Soft coral color for the heading */
+    margin-bottom: 15px;
+  }
+  
+  #summary-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .summary-btn {
+    background-color: #9b3a90; /* Consistent color with food buttons */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  .summary-btn:hover {
+    background-color: #264e36; /* Darker green on hover */
+  }
+  
+  .summary-btn:focus {
+    outline: none;
+  }
+  
+  /* Info Button for Food */
+.info-btn {
+    background-color: #9b3a90; /* Orange color for the info button */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+  }
+  
+  .info-btn:hover {
+    background-color: #9b3a90; /* Darker orange on hover */
+  }
+  
+  .info-btn:focus {
+    outline: none;
+  }
+
+  /* Styling for Foods Added to "Consommation Aujourd'hui" */
+#summary-list .summary-btn {
+    background-color: #ffe969; /* Pink background */
+    color: #000000; /* White text color */
+    border: 2px solid #ffe969; /* Matching border color */
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer; /* Clickable like a button */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a raised effect */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 10px;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  #summary-list .summary-btn:hover {
+    background-color: #ff1493; /* Darker pink on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+  
+  #summary-list .summary-btn:focus {
+    outline: none; /* Remove outline on focus */
+  }
+  
+  #summary-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+
+  /* General button styling for all buttons (including View Weekly Recap) */
+button {
+    background-color: #2a9d8f; /* Teal background color */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  button:hover {
+    background-color: #264e36; /* Darker teal on hover */
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* Specific styling for the 'View Weekly Recap' button */
+  .view-recap-btn {
+    background-color: #e751e2; /* Pink color for View Weekly Recap button */
+    color: white;
+    font-size: 18px; /* Slightly larger text */
+    padding: 15px 25px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  
+  .view-recap-btn:hover {
+    background-color: #b04ecf; /* Darker pink on hover */
+  }
+  
+  /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.weekly-recap-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+canvas {
+    width: 100%;
+    height: 400px;
+}
+
+.back-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    background-color: #45a049;
+}
+
+
